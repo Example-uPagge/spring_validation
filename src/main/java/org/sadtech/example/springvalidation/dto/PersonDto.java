@@ -3,6 +3,7 @@ package org.sadtech.example.springvalidation.dto;
 import lombok.Getter;
 import lombok.Setter;
 import org.sadtech.example.springvalidation.valid.CapitalLetter;
+import org.sadtech.example.springvalidation.valid.Marker;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,10 +11,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import javax.validation.constraints.Pattern;
 
 @Entity
@@ -23,6 +25,8 @@ import javax.validation.constraints.Pattern;
 public class PersonDto {
 
     @Id
+    @Null(groups = Marker.OnCreate.class)
+    @NotNull(groups = Marker.OnUpdate.class)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
