@@ -3,6 +3,14 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-
-
+    <changeSet id="create-person" author="uPagge">
+        <createTable tableName="person">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="number" type="int"/>
+            <column name="name" type="varchar(64)"/>
+            <column name="ip_address" type="varchar(64)"/>
+        </createTable>
+    </changeSet>
 </databaseChangeLog>
