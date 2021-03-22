@@ -2,6 +2,7 @@ package org.sadtech.example.springvalidation.dto;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.sadtech.example.springvalidation.valid.CapitalLetter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,6 +27,7 @@ public class PersonDto {
     private Long id;
 
     @NotBlank
+    @CapitalLetter
     private String name;
 
     @Min(1)
