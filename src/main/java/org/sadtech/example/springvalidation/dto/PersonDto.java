@@ -34,7 +34,10 @@ public class PersonDto {
     private int numberBetweenOneAndTen;
 
     @Column(name = "ip_address")
-    @Pattern(regexp = "^((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\\.(?!$)|$)){4}$")
+    @Pattern(
+            regexp = "^((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\\.(?!$)|$)){4}$",
+            message = "Не соответствует формату IP адреса"
+    )
     private String ipAddress;
 
 }
